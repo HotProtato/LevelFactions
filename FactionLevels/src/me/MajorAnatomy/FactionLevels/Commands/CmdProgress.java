@@ -2,6 +2,7 @@ package me.MajorAnatomy.FactionLevels.Commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -10,7 +11,7 @@ import me.MajorAnatomy.FactionLevels.FactionLevels;
 import com.massivecraft.factions.cmd.FactionsCommand;
 import com.massivecraft.factions.entity.MPlayer;
 
-public class CmdProgress extends FactionsCommand {
+public class CmdProgress extends FactionsCommand implements CommandExecutor{
 	
 	FactionLevels facLevels = new FactionLevels();
 	

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -12,7 +13,7 @@ import me.MajorAnatomy.FactionLevels.FactionLevels;
 import com.massivecraft.factions.cmd.FactionsCommand;
 import com.massivecraft.factions.entity.MPlayer;
 
-public class CmdDonate extends FactionsCommand {
+public class CmdDonate extends FactionsCommand implements CommandExecutor{
 	
 	FactionLevels facLevels = new FactionLevels();
 	

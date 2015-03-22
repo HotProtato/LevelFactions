@@ -4,6 +4,7 @@ import me.MajorAnatomy.FactionLevels.FactionLevels;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
@@ -12,7 +13,7 @@ import com.massivecraft.factions.Rel;
 import com.massivecraft.factions.cmd.FactionsCommand;
 import com.massivecraft.factions.entity.MPlayer;
 
-public class CmdClearInvite extends FactionsCommand {
+public class CmdClearInvite extends FactionsCommand implements CommandExecutor {
 	
 	FactionLevels facLevels = new FactionLevels();
 	

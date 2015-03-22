@@ -2,16 +2,15 @@ package me.MajorAnatomy.FactionLevels.Commands;
 
 import me.MajorAnatomy.FactionLevels.FactionLevels;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.massivecraft.factions.cmd.FactionsCommand;
-import com.massivecraft.factions.entity.MPlayer;
 
-public class CmdKillMessage extends FactionsCommand {
+public class CmdKillMessage extends FactionsCommand implements CommandExecutor{
 	
 	FactionLevels facLevels = new FactionLevels();
 	
@@ -19,7 +18,6 @@ public class CmdKillMessage extends FactionsCommand {
 	if(Sender instanceof Player){
 	facLevels.saveConfig();
 	Player p = (Player)Sender;
-	MPlayer p1 = MPlayer.get(p);
 	
 	if(cmd.getName().equalsIgnoreCase("killmessage") || cmd.getName().equalsIgnoreCase("km")){
 		if(args.length > 0){

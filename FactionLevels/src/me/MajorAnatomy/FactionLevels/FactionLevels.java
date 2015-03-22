@@ -8,6 +8,12 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.UUID;
 
+import me.MajorAnatomy.FactionLevels.Commands.CmdClearInvite;
+import me.MajorAnatomy.FactionLevels.Commands.CmdDonate;
+import me.MajorAnatomy.FactionLevels.Commands.CmdInvitedPlayers;
+import me.MajorAnatomy.FactionLevels.Commands.CmdKillMessage;
+import me.MajorAnatomy.FactionLevels.Commands.CmdProgress;
+import me.MajorAnatomy.FactionLevels.Commands.CmdQuickJoin;
 import me.MajorAnatomy.FactionLevels.Events.MainEvents;
 import me.MajorAnatomy.FactionLevels.Events.OnInvClick;
 import me.MajorAnatomy.FactionLevels.Events.OnInvite;
@@ -85,6 +91,7 @@ public class FactionLevels extends JavaPlugin implements Listener {
 			getConfig().addDefault("level " + e, e.getValue());
 		}
 		registerEvents();
+		registerCmds();
 		saveConfig();
 	}
 	
@@ -124,6 +131,17 @@ public class FactionLevels extends JavaPlugin implements Listener {
 		getServer().getPluginManager().registerEvents(new OnInvClick(), plugin);
 		getServer().getPluginManager().registerEvents(new OnInvite(), plugin);
 		getServer().getPluginManager().registerEvents(new MainEvents(), plugin);
+	}
+	
+	private void registerCmds() {
+		getCommand("clearinvites").setExecutor(new CmdClearInvite());
+		getCommand("clearinvs").setExecutor(new CmdClearInvite());
+		getCommand("donate").setExecutor(new CmdDonate());
+		getCommand("invitedplayers").setExecutor(new CmdInvitedPlayers());
+		getCommand("killmessage").setExecutor(new CmdKillMessage());
+		getCommand("km").setExecutor(new CmdKillMessage());
+		getCommand("progress").setExecutor(new CmdProgress());
+		getCommand("quickjoin").setExecutor(new CmdQuickJoin());
 	}
 
 	}
